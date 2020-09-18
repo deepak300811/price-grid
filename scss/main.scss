@@ -1,0 +1,117 @@
+$max-width: 1200px;
+$primary-cyan: hsl(179, 62%, 43%);
+$primary-bright-yellow: hsl(71, 73%, 54%);
+$neutral-light-gray: hsl(204, 43%, 93%);
+$neutral-grayish-blue: hsl(218, 22%, 67%);
+$lower-right: #4bbebc;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background: $neutral-light-gray;
+}
+ul {
+  list-style: none;
+}
+
+#main-div {
+  max-width: $max-width;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  .container {
+    border-radius: 10px;
+    align-self: center;
+    display: grid;
+    grid-template-areas: "upper upper" "lower-left lower-right";
+    height: 50%;
+    width: 53%;
+    background: $neutral-grayish-blue;
+    .inner-container {
+      padding: 2.2rem;
+    }
+    #upper {
+      background: #fff;
+      grid-area: upper;
+      h2 {
+        color: $primary-cyan;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        color: $primary-bright-yellow;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: $neutral-grayish-blue;
+        line-height: 1.5;
+      }
+    }
+    #lower-left {
+      border-radius: 0 0 0 10px;
+      background: $primary-cyan;
+      grid-area: lower-left;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+      & > *:first-child,
+      a,
+      div + p {
+        color: #fff;
+      }
+      & > *:first-child {
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+      div {
+        display: flex;
+        margin-bottom: 0.4rem;
+        align-items: center;
+        .big-text {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #fff;
+        }
+        p {
+          align-self: center;
+          color: $neutral-light-gray !important;
+          font-weight: normal;
+        }
+      }
+      a {
+        display: block;
+        margin-top: 1.8rem;
+        width: 100%;
+        padding: 0.8rem 0;
+        text-decoration: none;
+        text-align: center;
+        outline: none;
+        border: none;
+        border-radius: 7px;
+        background: $primary-bright-yellow;
+      }
+    }
+    #lower-right {
+      border-radius: 0 0 10px 0;
+      background: $lower-right;
+      grid-area: lower-right;
+      color: #fff;
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      ul {
+        font-size: 14px;
+        color: $neutral-light-gray;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+    }
+  }
+}
