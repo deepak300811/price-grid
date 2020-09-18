@@ -23,8 +23,7 @@ ul {
     align-self: center;
     display: grid;
     grid-template-areas: "upper upper" "lower lower";
-    height: 48%;
-    width: 53%;
+    max-width: 40rem;
     background: #98a6bd; }
     #main-div .container .inner-container {
       padding: 2.2rem; }
@@ -88,7 +87,8 @@ ul {
       color: #fff; }
       #main-div .container #lower-right p {
         font-size: 1.2rem;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        font-weight: 400; }
       #main-div .container #lower-right ul {
         font-size: 14px;
         color: #e5eff5;
@@ -105,7 +105,7 @@ ul {
       border-radius: 10px;
       grid-template-areas: "upper" "lower";
       height: fit-content;
-      width: 90%; }
+      max-width: 90%; }
       #main-div .container #lower {
         border-radius: 0 0 10px 10px;
         display: flex;

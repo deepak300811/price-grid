@@ -31,8 +31,8 @@ ul {
     align-self: center;
     display: grid;
     grid-template-areas: "upper upper" "lower lower";
-    height: 48%;
-    width: 53%;
+    // height: 48%;
+    max-width: 40rem;
     background: $neutral-grayish-blue;
     .inner-container {
       padding: 2.2rem;
@@ -114,6 +114,7 @@ ul {
       p {
         font-size: 1.2rem;
         margin-bottom: 1rem;
+        font-weight: 400;
       }
       ul {
         font-size: 14px;
@@ -135,7 +136,7 @@ ul {
       border-radius: 10px;
       grid-template-areas: "upper" "lower";
       height: fit-content;
-      width: 90%;
+      max-width: 90%;
       #lower {
         border-radius: 0 0 10px 10px;
         display: flex;
