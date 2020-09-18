@@ -18,16 +18,18 @@ ul {
   display: flex;
   justify-content: center; }
   #main-div .container {
+    box-shadow: 1px 5px 19px 2px #98a6bd;
     border-radius: 10px;
     align-self: center;
     display: grid;
-    grid-template-areas: "upper upper" "lower-left lower-right";
-    height: 50%;
+    grid-template-areas: "upper upper" "lower lower";
+    height: 48%;
     width: 53%;
     background: #98a6bd; }
     #main-div .container .inner-container {
       padding: 2.2rem; }
     #main-div .container #upper {
+      border-radius: 10px 10px 0 0;
       background: #fff;
       grid-area: upper; }
       #main-div .container #upper h2 {
@@ -39,45 +41,50 @@ ul {
       #main-div .container #upper p {
         color: #98a6bd;
         line-height: 1.5; }
-    #main-div .container #lower-left {
-      border-radius: 0 0 0 10px;
-      background: #2ab2af;
-      grid-area: lower-left; }
-      #main-div .container #lower-left > *:first-child,
-      #main-div .container #lower-left a,
-      #main-div .container #lower-left div + p {
-        color: #fff; }
-      #main-div .container #lower-left > *:first-child {
-        font-size: 1.1rem;
-        font-weight: 400;
-        margin-bottom: 1rem; }
-      #main-div .container #lower-left div {
-        display: flex;
-        margin-bottom: 0.4rem;
-        align-items: center; }
-        #main-div .container #lower-left div .big-text {
-          font-size: 2rem;
-          font-weight: 700;
+    #main-div .container #lower {
+      border-radius: 0 0 10px 10px;
+      grid-area: lower;
+      display: flex; }
+      #main-div .container #lower #lower-left {
+        border-radius: 0 0 0 10px;
+        background: #2ab2af;
+        flex-basis: 100%; }
+        #main-div .container #lower #lower-left > *:first-child,
+        #main-div .container #lower #lower-left a,
+        #main-div .container #lower #lower-left div + p {
           color: #fff; }
-        #main-div .container #lower-left div p {
-          align-self: center;
-          color: #e5eff5 !important;
-          font-weight: normal; }
-      #main-div .container #lower-left a {
-        display: block;
-        margin-top: 1.8rem;
-        width: 100%;
-        padding: 0.8rem 0;
-        text-decoration: none;
-        text-align: center;
-        outline: none;
-        border: none;
-        border-radius: 7px;
-        background: #c0df34; }
+        #main-div .container #lower #lower-left > *:first-child {
+          font-size: 1.1rem;
+          font-weight: 400;
+          margin-bottom: 1rem; }
+        #main-div .container #lower #lower-left div {
+          display: flex;
+          margin-bottom: 0.4rem;
+          align-items: center; }
+          #main-div .container #lower #lower-left div .big-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff; }
+          #main-div .container #lower #lower-left div p {
+            align-self: center;
+            color: #e5eff5 !important;
+            font-weight: normal; }
+        #main-div .container #lower #lower-left a {
+          display: block;
+          margin-top: 1.8rem;
+          width: 100%;
+          padding: 0.9rem 0;
+          text-decoration: none;
+          text-align: center;
+          outline: none;
+          border: none;
+          border-radius: 7px;
+          background: #c0df34;
+          box-shadow: 2px 2px 11px 0px #1e8583; }
     #main-div .container #lower-right {
+      flex-basis: 100%;
       border-radius: 0 0 10px 0;
       background: #4bbebc;
-      grid-area: lower-right;
       color: #fff; }
       #main-div .container #lower-right p {
         font-size: 1.2rem;
@@ -85,5 +92,25 @@ ul {
       #main-div .container #lower-right ul {
         font-size: 14px;
         color: #e5eff5;
-        line-height: 1.4;
+        line-height: 1.5;
         font-weight: 400; }
+
+@media (max-width: 768px) {
+  #main-div {
+    max-width: 400px;
+    padding: 20% 0;
+    height: fit-content; }
+    #main-div .container {
+      box-shadow: 1px 5px 19px 2px #98a6bd;
+      border-radius: 10px;
+      grid-template-areas: "upper" "lower";
+      height: fit-content;
+      width: 90%; }
+      #main-div .container #lower {
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: column; }
+        #main-div .container #lower #lower-left {
+          border-radius: 0; }
+        #main-div .container #lower #lower-right {
+          border-radius: 0 0 10px 10px; } }

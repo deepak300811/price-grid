@@ -26,17 +26,19 @@ ul {
   display: flex;
   justify-content: center;
   .container {
+    box-shadow: 1px 5px 19px 2px rgb(152, 166, 189);
     border-radius: 10px;
     align-self: center;
     display: grid;
-    grid-template-areas: "upper upper" "lower-left lower-right";
-    height: 50%;
+    grid-template-areas: "upper upper" "lower lower";
+    height: 48%;
     width: 53%;
     background: $neutral-grayish-blue;
     .inner-container {
       padding: 2.2rem;
     }
     #upper {
+      border-radius: 10px 10px 0 0;
       background: #fff;
       grid-area: upper;
       h2 {
@@ -52,55 +54,62 @@ ul {
         line-height: 1.5;
       }
     }
-    #lower-left {
-      border-radius: 0 0 0 10px;
-      background: $primary-cyan;
-      grid-area: lower-left;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: space-between;
-      & > *:first-child,
-      a,
-      div + p {
-        color: #fff;
-      }
-      & > *:first-child {
-        font-size: 1.1rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
-      }
-      div {
-        display: flex;
-        margin-bottom: 0.4rem;
-        align-items: center;
-        .big-text {
-          font-size: 2rem;
-          font-weight: 700;
+    #lower {
+      border-radius: 0 0 10px 10px;
+      grid-area: lower;
+      display: flex;
+
+      #lower-left {
+        border-radius: 0 0 0 10px;
+        background: $primary-cyan;
+        flex-basis: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        & > *:first-child,
+        a,
+        div + p {
           color: #fff;
         }
-        p {
-          align-self: center;
-          color: $neutral-light-gray !important;
-          font-weight: normal;
+        & > *:first-child {
+          font-size: 1.1rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
         }
-      }
-      a {
-        display: block;
-        margin-top: 1.8rem;
-        width: 100%;
-        padding: 0.8rem 0;
-        text-decoration: none;
-        text-align: center;
-        outline: none;
-        border: none;
-        border-radius: 7px;
-        background: $primary-bright-yellow;
+        div {
+          display: flex;
+          margin-bottom: 0.4rem;
+          align-items: center;
+          .big-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+          }
+          p {
+            align-self: center;
+            color: $neutral-light-gray !important;
+            font-weight: normal;
+          }
+        }
+        a {
+          display: block;
+          margin-top: 1.8rem;
+          width: 100%;
+          padding: 0.9rem 0;
+          text-decoration: none;
+          text-align: center;
+          outline: none;
+          border: none;
+          border-radius: 7px;
+          background: $primary-bright-yellow;
+          box-shadow: 2px 2px 11px 0px hsl(179, 63%, 32%);
+        }
       }
     }
     #lower-right {
+      flex-basis: 100%;
       border-radius: 0 0 10px 0;
       background: $lower-right;
-      grid-area: lower-right;
       color: #fff;
       p {
         font-size: 1.2rem;
@@ -109,8 +118,34 @@ ul {
       ul {
         font-size: 14px;
         color: $neutral-light-gray;
-        line-height: 1.4;
+        line-height: 1.5;
         font-weight: 400;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #main-div {
+    max-width: 400px;
+    padding: 20% 0;
+    height: fit-content;
+    .container {
+      box-shadow: 1px 5px 19px 2px rgb(152, 166, 189);
+      border-radius: 10px;
+      grid-template-areas: "upper" "lower";
+      height: fit-content;
+      width: 90%;
+      #lower {
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: column;
+        & #lower-left {
+          border-radius: 0;
+        }
+        & #lower-right {
+          border-radius: 0 0 10px 10px;
+        }
       }
     }
   }
